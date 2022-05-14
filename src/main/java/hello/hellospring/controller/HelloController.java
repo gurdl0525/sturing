@@ -11,9 +11,9 @@ public class HelloController {
     @GetMapping("hello")
     public String hello(Model model){
         model.addAttribute("data","spring!!");
-        // = model(data:hello!!!) 모델에 data는 hello!!라고 넣어놓음
+        // = model(data:hello!!!) 모델에 data는 spring!!라고 넣어놓음
         // 여기서 data는 attributeName, 즉 키를 의미
-        // hello!!는 attributeValue, 즉 값을 의미
+        // spring!!은 attributeValue, 즉 값을 의미
 
         return "hello";
         // return "hello"는 hello.html을 찾아 가서 렌더링하라
