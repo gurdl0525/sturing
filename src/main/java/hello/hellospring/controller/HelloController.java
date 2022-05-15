@@ -59,7 +59,7 @@ public class HelloController {
         //객체를 리턴(JSON)방식
     }
 
-    //java been 젝
+    //java 빈 jack
     //프로퍼티 접근 방식
     static class Hello{
         private String name;
