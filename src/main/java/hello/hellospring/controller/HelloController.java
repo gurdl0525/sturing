@@ -30,7 +30,11 @@ public class HelloController {
 
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model) {
+        // @RequestParam("name") = name이란 매개변수 생성 및 name값을 받아라~
+        // String name, Model model 문자열형의 name변수 생성(위 name과는 다름) 및 모델 생성
         model.addAttribute("name", name);
+        // 매개변수 name에 문자열 변수 name값을 넣어라
         return "hello-template";
+        // template아래에서 hello-template.html에 모델값과 반환값 전달
     }
 }
