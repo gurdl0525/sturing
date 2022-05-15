@@ -5,10 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloController {
 
+    //Thymleaf
     @GetMapping("hello")
     public String hello(Model model){
         model.addAttribute("data","spring!!");
@@ -28,6 +30,7 @@ public class HelloController {
         // 따라서 viewName이 hello로 바뀌기 때문에 hello.html로 간다.
     }
 
+    //mvc,템플릿 엔진
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model) {
         // @RequestParam("name") = name이란 매개변수 생성 및 name값을 받아라~
@@ -36,5 +39,30 @@ public class HelloController {
         // 매개변수 name에 문자열 변수 name값을 넣어라
         return "hello-template";
         // template아래에서 hello-template.html에 모델값과 반환값 전달
+    }
+
+    @GetMapping("hello-string")
+    @ResponseBody
+    public String helloString(@RequestParam("name")String name){
+        return "hello " + name;
+    }
+
+    //API
+    @GetMapping("hello-api")
+    @ResponseBody
+    public Hello helloApi(@RequestParam("name") String name){
+        Hello hello = new Hello();
+        hello.setName(name);
+        return hello;
+
+    }
+    static class Hello{
+        private String name;
+        public String getName() {
+            return name;
+        }
+        public void setName(String name) {
+            this.name = name;
+        }
     }
 }
