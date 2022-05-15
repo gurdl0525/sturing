@@ -52,16 +52,26 @@ public class HelloController {
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
+        //객체 hello생성
         hello.setName(name);
+        //hello에 setName추가
         return hello;
+        //객체를 리턴(JSON)방식
     }
+
+    //java been 젝
+    //프로퍼티 접근 방식
     static class Hello{
         private String name;
+        // 키가 프라이빗 이기 때문에 바깥에서 사용할 수 가 없다
         public String getName() {
             return name;
+            //꺼낼때는 getName
         }
+        //그렇기 때문에 메소드를 이용해서 사용
         public void setName(String name) {
             this.name = name;
+            //넣을때는 setName
         }
     }
 }
