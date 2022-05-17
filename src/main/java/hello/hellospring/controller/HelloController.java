@@ -63,7 +63,7 @@ public class HelloController {
     //프로퍼티 접근 방식
     static class Hello{
         private String name;
-        // 키가 프라이빗 이기 때문에 바깥에서 사용할 수 가 없다
+        //키가 프라이빗 이기 때문에 바깥에서 사용할 수 가 없다
         public String getName() {
             return name;
             //꺼낼때는 getName
