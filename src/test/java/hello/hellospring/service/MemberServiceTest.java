@@ -88,12 +88,4 @@ class MemberServiceTest {
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
         // 위 코드(join)에서 받은 메세지가 "이미 존재하는 회원입니다."와 같아야 한다.
     }
-
-    @Test
-    void findMembers() {
-    }
-
-    @Test
-    void findOne() {
-    }
 }

@@ -2,12 +2,19 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service// 서비스가 없을때는
+// 스프링이 순수한 자바 클래스를 와이드 해줄 수 없기 때문에
+// 스프링이 알아 들을수 있게 어노테이션을 걸어준다다
 public class MemberService {
     private final MemberRepository memberRepository;
+
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         // @BeforeEach에서 만든 MemeberService를 여기에 넣어줌
         this.memberRepository = memberRepository;
