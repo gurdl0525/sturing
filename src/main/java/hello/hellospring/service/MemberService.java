@@ -5,12 +5,14 @@ import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 @Service// 서비스가 없을때는
 // 스프링이 순수한 자바 클래스를 와이드 해줄 수 없기 때문에
-// 스프링이 알아 들을수 있게 어노테이션을 걸어준다다
+// 스프링이 알아 들을수 있게 어노테이션을 걸어준다
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -48,7 +50,7 @@ public class MemberService {
 
                 // 이미 있는 이름이라면 아직 name이 저장되기전에 같은 이름이 있음으로
                 // null값이 될 수 없음, 따라서 null값이 아니라면 같은 이름이 있음으로 중복회원
-                // 그러한 이유로 ifPresent를 통과해서 IllegalStateException("이미 존재하는 회원입니다.")을 Thro
+                // 그러한 이유로 ifPresent를 통과해서 IllegalStateException("이미 존재하는 회원입니다.")을 Throw
 
         // 위 로직을 메소드로 만들어줌
     }
